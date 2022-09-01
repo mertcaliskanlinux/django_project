@@ -1,0 +1,92 @@
+{% load static %}
+{% block content %}
+<div class="resume-content" id="resume-section">
+    <!--Award-->
+    <div class="awards">
+        <div class="main-title">
+            <span class="icon"><img src="{% static 'blog-static/images/resource/icons/award-1.png' %}" alt=""></span>
+            <span class="txt">SERTİFİKALAR</span>
+        </div>
+        <div class="row clearfix">
+            <!--Block-->
+            {% for certifica in certificas %}
+                    <div class="award-block col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="date"><span>{{certifica.year}}</span></div>
+                            <h5>{{certifica.title}}</h5>
+                            <div class="text"><p>{{certifica.description}}</p></div>
+                        </div>
+                    </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+
+
+    <!--Education-->
+    <div class="education">
+        <div class="main-title">
+            <span class="icon"><img src="{% static 'blog-static/images/resource/icons/education-1.png' %}" alt=""></span>
+            <span class="txt">EĞİTİM</span>
+        </div>
+        <div class="row clearfix">
+            <!--Block-->
+            {% for scholl in scholls %}
+                <div class="edu-block col-lg-6 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="date"><span>{{scholl.year_duration}} </span></div>
+                        <h5>{{scholl.title}}</h5>
+                        <div class="text">{{scholl.description}}.</div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <!--Interests-->
+    <div class="interests">
+        <div class="main-title">
+            <span class="icon"><img src="{% static 'blog-static/images/resource/icons/interest-1.png' %}" alt=""></span>
+            <span class="txt">HOBİLER</span>
+        </div>
+        <div class="row clearfix">
+            {% for ınterest in ınterests %}
+            <!--Block-->
+                <div class="interest-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><span class="icon def-icon"><img src="{{ ınterest.pngimage.url }}" alt=""></span><span class="icon hvr-icon"><img src="{{ ınterest.pngimage.url }}" alt=""></span></div>
+                        <h5>{{ınterest.title}} </h5>
+                    </div>
+                </div>
+            {% endfor %}
+           
+        </div>
+    </div>
+
+    <!--Experience-->
+    <div class="education experience">
+        <div class="main-title">
+            <span class="icon"><img src="{% static 'blog-static/images/resource/icons/experience-1.png' %}" alt=""></span>
+            <span class="txt">ÇALIŞTIĞIM FİRMALAR</span>
+        </div>
+        <div class="row clearfix">
+            <!--Block-->
+            {% for experience in experiences %}
+                <div class="edu-block col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="date"><span>{{experience.year_duration}}</span></div>
+                        <h5>{{experience.title}}</h5>
+                        <div class="text">{{experience.description}}</div>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

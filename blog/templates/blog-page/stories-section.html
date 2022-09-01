@@ -1,0 +1,72 @@
+{% load static %}
+
+{% block content %}
+
+<div class="stories-content" id="stories-section">
+    <div class="page-title sec-title"><h1><span>Blog</span></h1></div>
+    <!--Stories Section -->
+    <section class="stories-section">
+
+        <div class="row clearfix">
+            <div class="story-column col-xl-6 col-lg-12 col-md-12">
+                <!--News block-->
+              {% for blogs_rand in blog_rand %}
+              {% for blogs in blog %}
+
+                  <div class="news-block">
+                      <div class="inner-box">
+                        <div class="image"><img src="{{blogs.image.url}}" alt=""></div>
+                        <div class="over-box">
+                          <div class="hvr-lower">
+                              <div class="title"><a href="{{blogs.blogurl}}">{{blogs.title}}</a></div>
+                              
+                          </div>
+                        </div>
+                    </div>
+                    {% comment %} <div class="news-block-two">
+                      <div class="inner-box">
+                        <div class="text-box">
+                              <div class="title"><a href="story-single.html">{{blogs.title}}</a></div>
+                        </div>
+                    </div>
+                  </div> {% endcomment %}
+                  {% endfor %}
+
+                  </div>
+
+                  <!--News block-->
+
+
+              </div>
+
+              <div class="story-column col-xl-6 col-lg-12 col-md-12">
+                  <div class="news-block">
+                      <!-- <div class="inner-box">
+                        <div class="image"><img src="{{blogs_rand.image.url}}" alt=""></div>
+                        <div class="over-box">
+                          <div class="hvr-lower">
+                              <div class="title"><a href="{{blogs_rand.url}}">{{blogs_rand.title}}</a></div>
+                              
+                          </div>
+                        </div>
+                    </div>  -->
+
+                    <div class="news-block-two">
+                      <div class="inner-box">
+                        <div class="image"><a href="story-single.html"><img src="{{blogs_rand.image.url}}" alt=""></a></div>
+                        <div class="text-box">
+                              <div class="title"><a href="{{blogs_rand_url}}">{{blogs_rand.title}}</a></div>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+            {% endfor %}
+
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+{% endblock content %}

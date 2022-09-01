@@ -1,0 +1,101 @@
+{% load static %}
+{% block content %}
+
+<div class="home-content" id="home-section">
+    <!---Download CV-->
+    <div class="download-cv"><a href="/mert-caliskan-pdf" class="theme-btn download-btn"><i class="icon"><img src="{% static 'blog-static/images/resource/icons/white/cv-1.png' %}" alt=""></i><span class="txt">Downlod CV</span></a></div>
+    <!--Welcome-->
+    <div class="welcome">
+        {% for welcome in welcomes %}
+            <h4>{{welcome.title}}</h4>
+            <div class="text">{{welcome.description}}</div>
+        {% endfor %}
+    </div>
+
+    <!--About Me-->
+    <div class="about-me">
+        <div class="row clearfix">
+            <!--Skills-->
+            <!-- <div class="skills-column col-xl-5 col-lg-12 col-md-12">
+                <h4>TECRÜBELERİM</h4>
+                <div class="skills">
+                    {% for skıll in skılls %}
+                        <div class="skill-block">
+                            <div class="skill-block-inner">
+                                <div class="skill-title">{{skıll.title}}</div>
+                                <div class="bar">
+                                    <div class="bar-inner count-bar" data-percent="{{skıll.count_bar}}%">
+                                        <div class="count-box"><span class="count-text" data-stop="{{skıll.count_bar}}" data-speed="2000">0</span>%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                
+
+                </div>
+            </div> -->
+
+            <!--Expertise-->
+            <div class="expertise-column col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                <h4>KULLANDIĞIM TEKNOLOJİLER</h4>
+                <div class="expertise">
+                    {% for expertise in expertiess %}
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-6 col-sm-6 ">
+                                <ul>
+                                    <li>{{expertise.title1}}</li>
+                                  
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <ul>
+                                    <li>{{expertise.title2}}</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>--
+
+        </div>
+
+        <!--Features-->
+        {% comment %} <div class="features">
+            <div class="row clearfix">
+                <!--Feature Block-->
+                <!--<div class="feature-block col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><span class="icon"><img src="{% static 'blog-static/images/resource/icons/lcd-2.png' %}" alt=""></span></div>
+                        <h5>Design Concept</h5>
+                        <div class="text">Awesome designs for your company</div>
+                    </div>
+                </div>-->
+                <!--Feature Block-->
+                <!--<div class="feature-block col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><span class="icon"><img src="{% static 'blog-static/images/resource/icons/mobile-2.png' %}" alt=""></span></div>
+                        <h5>App Development</h5>
+                        <div class="text">Well-coded apps suitable for your needs</div>
+                    </div>
+                </div>-->
+                <!--Feature Block-->
+                <!--<div class="feature-block col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><span class="icon"><img src="{% static 'blog-static/images/resource/icons/support-2.png' %}" alt=""></span></div>
+                        <h5>Marketing</h5>
+                        <div class="text">Affordable, targeted media for everyone</div>
+                    </div>
+                </div>-->
+            </div>
+        </div> {% endcomment %}
+
+        <!--Languages-->
+    
+    </div><!--End About Me-->
+
+</div>
+
+{% endblock content %}

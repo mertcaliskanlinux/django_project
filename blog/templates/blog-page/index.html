@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mert ÇALIŞKAN</title>
+<!-- Stylesheets -->
+<link href="{% static 'blog-static/css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'blog-static/css/style.css' %}" rel="stylesheet">
+<link rel="shortcut icon" href="{% static 'blog-static/images/favicon.png' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'blog-static/images/favicon.png' %}" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="{% static 'blog-static/css/responsive.css' %}" rel="stylesheet">
+</head>
+
+<body class="home-body grey-left-bar">
+
+<div class="body-bg" style="background-image: url({% static 'blog-static/images/background/body-bg.png' %});"></div>
+
+<div class="page-wrapper">
+  
+    <!-- Preloader -->
+    <div class="preloader"><div class="icon"></div></div>
+
+    <!-- Site Container-->
+    <div class="site-container">
+
+        <div class="mode-switch">
+            <div class="switcher clearfix">
+                <div class="left-text">Weekend Mode</div>
+                <div class="switch-btn"><div class="btn-inner"><div class="circle"></div><div class="txt">OFF</div></div><a href="weekend-mode.html"></a></div>
+            </div>
+        </div>
+
+        <div class="auto-container">
+            {% for account in accounts %}
+                <div class="mobile-header">
+                    <div class="inner">
+                        <div class="logo-side">
+                            <div class="image-box">
+                                <div class="image"><img src="{{ account.image.url }}" alt=""></div>
+                            </div>
+                            <div class="info">
+                                <div class="name">{{account.name}} {{account.surname}}</div>
+                                <div class="designation">{{ account.description }}</div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <div class="social-btn"><i class="icon">+</i></div>
+                            <ul class="links clearfix">
+                                <li><a href="{{ account.github }}"><span class="fab fa-instagram"></span></a></li>
+                                <li><a href="{{ account.twitter }}"><span class="fab fa-twitter-square"></span></a></li>
+                                <li><a href="{{ account.linked }}"><span class="fab fa-linkedin"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-toggler"><img src="{% static 'blog-static/images/icons/menu-icon.png' %}" alt=""></div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="site-content-container row clearfix">
+                <!--Left Bar-->
+                {% for account in accounts %}
+                    <div class="left-bar sticky-top col-xl-3 col-lg-4 col-md-12">
+                        <div class="left-inner">
+                            <div class="nav-toggler"><img src="{% static 'blog-static/images/icons/close-icon.png' %}" alt=""></div>
+                            <div class="left-upper">
+                                <div class="image-box">
+                                    <div class="image"><img src="{{ account.image.url }}" alt=""></div>
+                                    <div class="social-links">
+                                        <div class="social-btn"><i class="icon">+</i></div>
+                                        <ul class="links clearfix">
+                                            <li><a href="{{ account.github }}"><span class="fab fa-instagram"></span></a></li>
+                                            <li><a href="{{ account.twitter }}"><span class="fab fa-twitter-square"></span></a></li>
+                                            <li><a href="{{ account.linked }}"><span class="fab fa-linkedin"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="name">{{account.name}} {{account.surname}}</div>
+                                    <div class="designation"><i class="dot"></i>{{ account.description }}</div>
+                                </div>
+                            </div>
+                            
+                            <div class="left-lower">
+                                <nav class="main-nav">
+                                    <ul class="navigation scroll-nav">
+                                        <li class="home current"><a href="#home-section">Anasayfa</a></li>
+                                        <li class="resume"><a href="#resume-section">Sertifikalar</a></li>
+                                        <li class="stories"><a href="#stories-section">Blog</a></li>
+                                        <li class="contact"><a href="#contact-section">İletişim</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <!--Right Content-->
+                <div class="right-content col-xl-9 col-lg-8 col-md-12">
+                    <div class="right-inner">
+                        <div class="content-container">
+
+                            {% include 'blog-page/home.html' %}
+                            
+                            <!--Resume Section-->
+
+                            
+                            {% include 'blog-page/resume-section.html' %}
+                                                        
+
+                            
+                            <!--Stories Section-->
+                            
+                            {% include 'blog-page/stories-section.html' %}
+
+
+                            <!--Contact Section-->
+                            
+                            {% include 'blog-page/contact.html' %}
+
+                        </div>
+                    </div>
+
+                    <!--Copyright-->
+                    <div class="site-footer">
+                        <div class="copyright">&copy; MERT ÇALIŞKAN</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--End Site Container -->
+    
+    
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fas fa-arrow-up"></span></div>
+
+<script src="{% static 'blog-static/js/jquery.js' %}"></script>
+<script src="{% static 'blog-static/js/popper.min.js' %}"></script>
+<script src="{% static 'blog-static/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'blog-static/js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'blog-static/js/jquery.scrollTo.js' %}"></script>
+<script src="{% static 'blog-static/js/pagenav.js' %}"></script>
+<script src="{% static 'blog-static/js/owl.js' %}"></script>
+<script src="{% static 'blog-static/js/mixitup.js' %}"></script>
+<script src="{% static 'blog-static/js/knob.js' %}"></script>
+<script src="{% static 'blog-static/js/wow.js' %}"></script>
+<script src="{% static 'blog-static/js/appear.js' %}"></script>
+<script src="{% static 'blog-static/js/custom-script.js' %}"></script>
+
+</body>
+</html>
